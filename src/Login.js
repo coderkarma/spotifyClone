@@ -1,4 +1,5 @@
 import React from 'react';
+import { loginUrl } from './spotify';
 import './Login.css';
 
 const Login = () => {
@@ -9,9 +10,7 @@ const Login = () => {
 				alt=''
 			/>
 
-			<a href='https://accounts.spotify.com/en/login/?continue=https:%2F%2Fwww.spotify.com%2Fapi%2Fgrowth%2Fl2l-redirect&_locale=en-US'>
-				LOGIN WITH SPOTIFY
-			</a>
+			<a href={loginUrl}>LOGIN WITH SPOTIFY</a>
 		</div>
 	);
 };
