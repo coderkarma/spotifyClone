@@ -13,6 +13,18 @@ const scopes = [
 	'user-modify-playback-state',
 ];
 
+export const getTokenFromUrl = () => {
+	return window.location.hash
+		.substring(1)
+		.split('&')
+		.reduce((initial, item) => {
+			// #accessToken="secret&name="karma"
+			let parts = item.split('=');
+			initial[parts[0]] = decodeURIComponent(parts[0]);
+			return initial;
+		}, {});
+};
+
 export const loginUrl = `${authEndPoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
 	'%20'
 )}&response_type=token&show_dialog=true`;
