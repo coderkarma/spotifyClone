@@ -12,10 +12,8 @@ const App = () => {
 
 	useEffect(() => {
 		const hash = getTokenFromUrl();
-		console.log('hash', hash);
 		window.location.hash = '';
 		const _token = hash.access_token;
-		console.log('tokeeen :point👉', _token);
 
 		if (_token) {
 			setToken(_token);
